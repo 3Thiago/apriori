@@ -1,5 +1,4 @@
 import tensorflow as tf
-import numpy as np
 from reduce_inputs import reduce_input_columns_with_current_mask
 from possible_groups_mask import get_possible_groups_cube_and_mask
 
@@ -22,7 +21,6 @@ def get_inputs_t_multiplied_by_transpose_permutations(input_groups, group_size):
 
 def get_next_mask_and_groups(gc):
     """
-    TODO: use tf.tensordot to join the input rows to the 'possible groups' cube
     ----- The input elements axis becomes the new dimension of the
     """
 
@@ -51,5 +49,3 @@ def get_next_mask_and_groups(gc):
     next_possible_groups_indices = tf.where(group_counts_t >= gc["min_support"])
 
     return frequent_groups_indices, frequent_groups_counts, next_possible_groups_indices, mask
-
-# test_get_next_mask_and_groups(input_3_5)

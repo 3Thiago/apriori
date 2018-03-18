@@ -35,7 +35,3 @@ def get_possible_groups_cube_and_mask(prev_group_indices: ndarray, group_size: i
     return tf.sparse_to_dense(sparse_indices=mapped_groups_cube_idxs,
                               output_shape=groups_cube_shape,
                               sparse_values=groups_cube_values, ), mask
-
-
-# _test_get_possible_groups_cube_and_mask(prev_group_indices_2d, group_size, current_mask,
-#                                         expected_groups_cube, expected_mask)
