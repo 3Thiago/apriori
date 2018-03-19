@@ -14,7 +14,7 @@ def get_inputs_t_multiplied_by_transpose_permutations(input_groups, group_size):
         print(f"perm{perm}")
 #         perm = [0 if i == -1 else perm[i] for i in range(-1, len(perm))]
         input_groups_perm = tf.transpose(input_groups, perm=perm)
-        #TODO: Test broadcasting always works when using same number of input rows as unique elements
+        # TODO: Test broadcasting always works when using same number of input rows as unique elements
         cross_multiplied_input_groups = tf.multiply(cross_multiplied_input_groups, input_groups_perm)
     return cross_multiplied_input_groups
 
@@ -28,7 +28,7 @@ def get_next_mask_and_groups(gc):
 
     inputs_reduced = reduce_input_columns_with_current_mask(gc["input_rows"],
                                                             gc["curr_bin_mask"])
-
+    print(inputs_reduced)
     possible_groups_cube, mask = get_possible_groups_cube_and_mask(gc["prev_group_indices"],
                                                                    gc["current_N"],
                                                                    gc["curr_bin_mask"])

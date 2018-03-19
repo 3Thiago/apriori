@@ -5,5 +5,6 @@ setup(
     version='0.1dev',
     packages=['apriori',],
     license='MIT',
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
+    url='https://github.com/CRJFisher/apriori',
 )
